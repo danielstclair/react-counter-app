@@ -27,8 +27,8 @@
     <link rel="stylesheet" href="main.css" />
     <title>React App</title>
   </head>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="app">
       <div>
         <div class="count">
@@ -45,16 +45,32 @@
         </div>
       </div>
     </div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <script type="module">
+      let count = 0
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      function displayCount(count) {
+        const countElement = document.querySelector('.count h1')
+        countElement.innerHTML = count
+      }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    <script src="vanilla.js"></script>
+      function increaseCount() {
+        count = count + 1
+        displayCount(count)
+      }
+
+      function decreaseCount() {
+        count = count - 1
+        displayCount(count)
+      }
+
+      displayCount(count)
+      document
+        .querySelector('#decrease-button')
+        .addEventListener('click', decreaseCount)
+      document
+        .querySelector('#increase-button')
+        .addEventListener('click', increaseCount)
+    </script>
+
   </body>
 </html>

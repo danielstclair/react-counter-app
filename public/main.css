@@ -31,6 +31,3 @@
 .app .buttons button:hover{
     font-size: 7em;
 }
-.app .buttons button:focus{
-    outline: 0;
-}
