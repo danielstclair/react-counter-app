@@ -29,6 +29,7 @@
   </head>
 
   <body>
+
     <div class="app">
       <div>
         <div class="count">
@@ -43,8 +44,40 @@
             +
           </button>
         </div>
+        <button id="reset-button" type="button">reset</button>
+      </div>
+      <div>
+        <div class="count">
+          <h3>Count:</h3>
+          <h1></h1>
+        </div>
+        <div class="buttons">
+          <button id="decrease-button" type="button">
+            -
+          </button>
+          <button id="increase-button" type="button">
+            +
+          </button>
+        </div>
+        <button id="reset-button" type="button">reset</button>
+      </div>
+      <div>
+        <div class="count">
+          <h3>Count:</h3>
+          <h1></h1>
+        </div>
+        <div class="buttons">
+          <button id="decrease-button" type="button">
+            -
+          </button>
+          <button id="increase-button" type="button">
+            +
+          </button>
+        </div>
+        <button id="reset-button" type="button">reset</button>
       </div>
     </div>
+
     <script type="module">
       let count = 0
 
@@ -59,18 +92,27 @@
       }
 
       function decreaseCount() {
-        count = count - 1
-        displayCount(count)
+        if (count) {
+          count = count - 1
+          displayCount(count)
+        }
+      }
+
+      function reset() {
+        displayCount(0)
       }
 
       displayCount(count)
+
       document
         .querySelector('#decrease-button')
         .addEventListener('click', decreaseCount)
       document
         .querySelector('#increase-button')
         .addEventListener('click', increaseCount)
+      document
+        .querySelector('#reset-button')
+        .addEventListener('click', resetCount)
     </script>
-
   </body>
 </html>
